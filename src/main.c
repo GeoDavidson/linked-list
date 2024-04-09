@@ -6,6 +6,14 @@ typedef struct node {
     struct node *next;
 } node_t;
 
+void printList(node_t *head) {
+    node_t *current = head;
+    while (current != NULL) {
+        printf("data = %d\n", current->data);
+        current = current->next;
+    }
+}
+
 void newNode(node_t **head, int data) {
     node_t *node = (node_t *)malloc(sizeof(node_t));
     node->data = data;
@@ -79,11 +87,7 @@ int main() {
         newNode(&head, i);
     }
 
-    node_t *current = head;
-    while (current != NULL) {
-        printf("data = %d\n", current->data);
-        current = current->next;
-    }
+    printList(head);
 
     popIndex(&head, 3);
     pop(&head);
@@ -91,11 +95,7 @@ int main() {
 
     printf("Done1\n");
 
-    current = head;
-    while (current != NULL) {
-        printf("data = %d\n", current->data);
-        current = current->next;
-    }
+    printList(head);
 
     printf("Done2\n");
 
