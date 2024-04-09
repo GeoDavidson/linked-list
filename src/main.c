@@ -57,13 +57,13 @@ void popIndex(node_t **head, int index) {
         node_t *current = *head;
         for (int i = 0; i < index - 1; i++) {
             if (current->next == NULL) {
-                fprintf(stderr, "ERROR: overflow, index out of range\n");
+                fprintf(stderr, "ERROR: index out of range\n");
                 exit(1);
             }
             current = current->next;
         }
         if (current->next == NULL) {
-            fprintf(stderr, "ERROR: overflow, index out of range\n");
+            fprintf(stderr, "ERROR: index out of range\n");
             exit(1);
         }
         node_t *tempNode = current->next;
