@@ -75,8 +75,8 @@ void popIndex(node_t **head, int index) {
 int main() {
     node_t *head = NULL;
 
-    for (int i = 0; i < 3; i++) {
-        newNode(&head, (i + 1) * 10);
+    for (int i = 0; i < 5; i++) {
+        newNode(&head, i);
     }
 
     node_t *current = head;
@@ -85,7 +85,9 @@ int main() {
         current = current->next;
     }
 
-    popIndex(&head, 0);
+    popIndex(&head, 3);
+    pop(&head);
+    popLast(&head);
 
     printf("Done1\n");
 
