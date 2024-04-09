@@ -89,11 +89,11 @@ int main() {
 
     printList(head);
 
+    printf("Done1\n");
+
     popIndex(&head, 3);
     pop(&head);
     popLast(&head);
-
-    printf("Done1\n");
 
     printList(head);
 
