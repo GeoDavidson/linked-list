@@ -7,9 +7,11 @@ typedef struct node {
 } node_t;
 
 void printList(node_t *head) {
+    int index = 0;
     node_t *current = head;
     while (current != NULL) {
-        printf("data = %d\n", current->data);
+        printf("%d: addr = %p: data = %d: next = %p\n", index, current, current->data, current->next);
+        index++;
         current = current->next;
     }
 }
@@ -84,7 +86,7 @@ int main() {
     node_t *head = NULL;
 
     for (int i = 0; i < 5; i++) {
-        newNode(&head, i);
+        newNode(&head, (i + 1) * 10);
     }
 
     printList(head);
